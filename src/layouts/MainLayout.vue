@@ -13,7 +13,6 @@
           alt="logo"
         />
         <q-toolbar-title> Sophosia </q-toolbar-title>
-        <q-tabs></q-tabs>
 
         <q-tabs
           v-model="tab"
@@ -50,33 +49,30 @@
   </q-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { computed, ref } from "vue";
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n({ useScope: "global" });
 
-export default defineComponent({
-  name: "MainLayout",
-
-  data() {
-    return {
-      tab: "",
-
-      language: { value: "en_US", label: "English" },
-      languageOptions: [
-        { value: "en_US", label: "English" },
-        { value: "zh_CN", label: "中文" },
-      ],
-    };
+const tab = ref("");
+const languageOptions = [
+  { value: "en_US", label: "English" },
+  { value: "zh_CN", label: "中文" },
+];
+const language = computed({
+  get() {
+    for (let option of languageOptions) {
+      if (option.value === locale.value) return option;
+    }
+    return { value: "en_US", label: "English" };
   },
-
-  watch: {
-    language(option: { value: string; label: string }) {
-      this.$i18n.locale = option.value;
-    },
+  set(option: { value: string; label: string }) {
+    locale.value = option.value;
   },
 });
 </script>
 
-<style>
+<style scoped lang="scss">
 .header {
   /* fuzzy glass */
   background: #0000001a;
