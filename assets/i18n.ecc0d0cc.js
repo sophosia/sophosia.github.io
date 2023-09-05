@@ -1,1 +1,0 @@
-import{b as e}from"./index.80c37c45.js";import{c as t}from"./vue-i18n.runtime.esm-bundler.a383ec15.js";var a={documentation:o=>{const{normalize:n}=o;return n(["Documentation"])}},r={documentation:o=>{const{normalize:n}=o;return n(["\u6587\u6863"])}};const m={en_US:a,zh_CN:r};var c=e(({app:o})=>{const n=t({locale:"en_US",messages:m});o.use(n)});export{c as default};
