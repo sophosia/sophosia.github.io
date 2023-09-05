@@ -10,34 +10,14 @@ yarn
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Start development (hot-code reloading, error reporting, etc.)
 
 ```bash
 quasar dev
 ```
 
-### Lint the files
+### Release the page
 
-```bash
-yarn lint
-# or
-npm run lint
-```
+1. In Settings -> Pages -> Build and deployment, select deploy from a branch then set the branch to be gh-pages / (root).
 
-### Format the files
-
-```bash
-yarn format
-# or
-npm run format
-```
-
-### Build the app for production
-
-```bash
-quasar build
-```
-
-### Customize the configuration
-
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+2. When push to main, the github workflow will automatically publish the new version.
