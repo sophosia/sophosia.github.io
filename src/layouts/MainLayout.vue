@@ -9,7 +9,7 @@
     >
       <q-toolbar>
         <img
-          src="~assets/logo.svg"
+          src="icons/favicon-32x32.png"
           alt="logo"
         />
         <q-toolbar-title> Sophosia </q-toolbar-title>
@@ -22,7 +22,7 @@
         >
           <q-route-tab
             name="github"
-            icon="bi-github"
+            icon="mdi-github"
             href="https://github.com/ResearchHelper/research-helper"
             target="_blank"
           />
@@ -52,7 +52,10 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
+import { useQuasar } from "quasar";
 const { locale } = useI18n({ useScope: "global" });
+const $q = useQuasar();
+$q.dark.set(true);
 
 const tab = ref("");
 const languageOptions = [

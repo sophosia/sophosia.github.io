@@ -1,24 +1,29 @@
 <template>
   <q-page>
     <div class="column items-center">
-      <h2 class="text-white title">
-        {{ "Accelerate Your Research" }}
+      <h2 class="text-white title text-bold">
+        {{ "Your Research Helper" }}
       </h2>
 
       <div class="row items-center">
         <q-btn
-          square
           no-caps
           class="bg-primary text-white button"
           size="xl"
-          label="Try Sophosia"
-          icon="bi-download"
-          href="https://github.com/ResearchHelper/research-helper/releases"
+          :label="downloadLabel"
+          :href="downloadLink"
+          icon="mdi-download"
           target="_blank"
+          :disable="['Android', 'iOS'].includes(os)"
+          color="primary"
         />
-        <div class="q-ml-md text-h6 text-white">
-          {{ `Version: ${release?.tag_name}` }}
-        </div>
+        <a
+          class="q-ml-md text-h6 text-white"
+          href="https://github.com/sophosia/sophosia/releases/latest"
+          target="_blank"
+        >
+          {{ `More platforms` }}
+        </a>
       </div>
 
       <q-carousel
@@ -84,54 +89,78 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 
 const slide = ref("library");
 const release = ref({});
+const os = ref("");
+const downloadLabel = ref("");
+const downloadLink = ref("");
+const version = ref("");
 
-onMounted(() => {
-  let os = getOS();
-  console.log("system os", os);
+onMounted(async () => {
+  await getVersion();
+  getOS();
+  prepareLinks();
+});
 
-  fetch(
-    "https://api.github.com/repos/ResearchHelper/research-helper/releases/latest",
+async function getVersion() {
+  const response = await fetch(
+    "https://api.github.com/repos/sophosia/sophosia/releases/latest",
     {
       method: "GET",
       headers: {
         Accept: "application/vnd.github+json",
       },
     }
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      release.value = data;
-      console.log(data);
-    });
-});
+  );
+  const data = await response.json();
+  version.value = data.tag_name.slice(1) as string; // use slice to get rid of "v"
+}
 
 function getOS() {
   var userAgent = window.navigator.userAgent,
     platform =
-      window.navigator?.userAgentData?.platform || window.navigator.platform,
+      window.navigator.userAgentData?.platform || window.navigator.platform,
     macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
     windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
-    iosPlatforms = ["iPhone", "iPad", "iPod"],
-    os = null;
+    iosPlatforms = ["iPhone", "iPad", "iPod"];
 
-  console.log(os);
   if (macosPlatforms.indexOf(platform) !== -1) {
-    os = "Mac OS";
+    os.value = "Mac";
   } else if (iosPlatforms.indexOf(platform) !== -1) {
-    os = "iOS";
+    os.value = "iOS";
+    downloadLabel.value = `Get Sophosia for ${os.value} (AppImage)`;
+    downloadLink.value = `https://github.com/sophosia/sophosia/releases/latest/sophosia_${release.value}_amd64.AppImage`;
   } else if (windowsPlatforms.indexOf(platform) !== -1) {
-    os = "Windows";
+    os.value = "Windows";
+    downloadLabel.value = `Get Sophosia for ${os.value} (NSIS)`;
   } else if (/Android/.test(userAgent)) {
-    os = "Android";
+    os.value = "Android";
+    downloadLabel.value = `Sophosia for ${os.value} is coming`;
   } else if (/Linux/.test(platform)) {
-    os = "Linux";
+    os.value = "Linux";
+    downloadLabel.value = `Sophosia for ${os.value} is coming`;
   }
+}
 
-  return os;
+function prepareLinks() {
+  const prefix = `https://github.com/sophosia/sophosia/releases/download/v${version.value}`;
+  switch (os.value) {
+    case "Mac":
+      downloadLabel.value = `Get Sophosia for ${os.value} (DMG)`;
+      downloadLink.value = `${prefix}/sophosia_${version.value}_x64.dmg`;
+      break;
+    case "Linux":
+      downloadLabel.value = `Get Sophosia for ${os.value} (AppImage)`;
+      downloadLink.value = `${prefix}/sophosia_${version.value}_amd64.AppImage`;
+    case "Windows":
+      downloadLabel.value = `Get Sophosia for ${os.value} (EXE)`;
+      downloadLink.value = `${prefix}/sophosia_${version.value}_x64-setup.exe`;
+    default:
+      downloadLabel.value = `Sophosia for ${os.value} is coming`;
+      break;
+  }
 }
 </script>
 

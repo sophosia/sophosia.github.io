@@ -1,1 +1,16 @@
 // app global css in SCSS form
+body.body--dark {
+  --q-primary: #3d59a1;
+  --q-dark: #16161e;
+  --q-dark-page: #1a1b26;
+  --q-edge: black;
+  --color-text: white;
+}
+
+body {
+  --q-primary: #78b5de;
+  --q-dark: #d4d6e4;
+  --q-dark-page: #e1e2e7;
+  --q-edge: white;
+  --color-text: black;
+}
