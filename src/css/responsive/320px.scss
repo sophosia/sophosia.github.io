@@ -1,0 +1,47 @@
+@media (max-width: 320px) {
+  .slogan {
+    font-size: 1.2rem;
+  }
+
+  .app-description {
+    font-size: 1rem;
+  }
+
+  .link-container {
+    flex-direction: column;
+  }
+
+  .screenshot {
+    width: 90%;
+  }
+
+  .button {
+    font-size: 1rem;
+  }
+
+  .link {
+    font-size: 1rem;
+  }
+
+  .feature-container {
+    width: 100%;
+    grid-template-areas:
+    "desc"
+    "img";
+  } 
+
+  .feature-container-reversed {
+    width: 100%;
+    grid-template-areas:
+    "desc"
+    "img";
+  } 
+
+  .feature-title {
+    font-size: 1.2rem
+  }
+
+  .feature-description {
+    font-size: 1.1rem
+  }
+}

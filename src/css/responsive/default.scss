@@ -1,0 +1,101 @@
+.header {
+  /* fuzzy glass */
+  background: #0000001a;
+  color: var(--color-text);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+}
+
+.page-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.slogan {
+  font-size: 3rem;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.app-description {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.screenshot {
+  width: 70%;
+  margin-bottom: 5rem;
+}
+
+.link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.button {
+  font-size: 1.5rem;
+  background-color: $primary;
+  color: var(--color-text);
+}
+
+.link {
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.feature-container {
+  display: grid;
+  // description : image = 1:2
+  grid-template-areas: "desc img img";
+  gap: 1rem;
+  width: 70%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.feature-container-reversed {
+  display: grid;
+  // description : image = 1:2
+  grid-template-areas: "img img desc";
+  gap: 1rem;
+  width: 70%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.feature-desc {
+  grid-area: desc;
+  width: 100%;
+}
+
+.feature-img {
+  grid-area: img;
+  width: 100%;
+}
+
+.feature-card {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.feature-title {
+  color: var(--q-primary);
+  font-size: 2rem;
+}
+
+.feature-description {
+  color: var(--color-text);
+  font-size: 1.5rem;
+}

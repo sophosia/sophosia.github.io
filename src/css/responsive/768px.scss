@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .screenshot {
+    width: 90%;
+  }
+
+  .feature-container {
+    width: 100%;
+    grid-template-areas:
+    "desc"
+    "img";
+  } 
+
+  .feature-container-reversed {
+    width: 100%;
+    grid-template-areas:
+    "desc"
+    "img";
+  } 
+}
