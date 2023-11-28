@@ -2,7 +2,7 @@
   <q-page class="page-container">
     <div class="column items-center">
       <h2 class="slogan">
-        {{ "Sophosia: Your Research Helper" }}
+        {{ $t("slogan") }}
       </h2>
       <div class="app-description">
         THE reference manager with features including PDF reading / annotating,
@@ -17,7 +17,7 @@
           :href="downloadLink"
           icon="mdi-download"
           target="_blank"
-          :disable="['Android', 'iOS'].includes(os)"
+          :disable="!['Windows', 'Linux', 'Mac'].includes(os)"
           color="primary"
         />
         <a
@@ -25,7 +25,7 @@
           href="https://github.com/sophosia/sophosia/releases/latest"
           target="_blank"
         >
-          {{ `More platforms` }}
+          {{ $t("more-platform") }}
         </a>
       </div>
 
@@ -94,14 +94,18 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch, watchEffect } from "vue";
+import { useI18n } from "vue-i18n";
+const { locale, t } = useI18n({ useScope: "global" });
 
-const slide = ref("library");
-const release = ref({});
 const os = ref("");
 const downloadLabel = ref("");
 const downloadLink = ref("");
 const version = ref("");
+
+watch(locale, () => {
+  prepareLinks();
+});
 
 onMounted(async () => {
   await getVersion();
@@ -148,19 +152,21 @@ function prepareLinks() {
   const prefix = `https://github.com/sophosia/sophosia/releases/download/v${version.value}`;
   switch (os.value) {
     case "Mac":
-      downloadLabel.value = `Get Sophosia for ${os.value} (dmg)`;
+      downloadLabel.value = t("get-sophosia-for", [`${os.value} (dmg)`]);
       downloadLink.value = `${prefix}/sophosia_${version.value}_x64.dmg`;
       break;
     case "Linux":
-      downloadLabel.value = `Get Sophosia for ${os.value} (AppImage)`;
+      downloadLabel.value = t("get-sophosia-for", [`${os.value} (appimage)`]);
       downloadLink.value = `${prefix}/sophosia_${version.value}_amd64.AppImage`;
+      console.log("locale", locale.value);
+      console.log("downloadLabel", downloadLabel.value);
       break;
     case "Windows":
-      downloadLabel.value = `Get Sophosia for ${os.value} (msi)`;
-      downloadLink.value = `${prefix}/sophosia_${version.value}_x64-setup.exe`;
+      downloadLabel.value = t("get-sophosia-for", [`${os.value} (msi)`]);
+      downloadLink.value = `${prefix}/sophosia_${version.value}_x64_en-US.msi`;
       break;
     default:
-      downloadLabel.value = `Sophosia for ${os.value} is coming`;
+      downloadLabel.value = t("sophosia-is-coming", [os.value]);
       break;
   }
 }

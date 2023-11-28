@@ -29,7 +29,7 @@
           >
             <q-item-section>{{ $t("documentation") }}</q-item-section>
           </q-item>
-          <q-expansion-item label="Language">
+          <q-expansion-item :label="$t('language')">
             <q-list>
               <q-item
                 v-for="lang in languageOptions"
@@ -44,7 +44,7 @@
           <q-item>
             <q-item-section>
               <div class="row justify-between">
-                {{ $q.dark.isActive ? "Enter light mode" : "Enter dark mode" }}
+                {{ $t("light-dark-mode") }}
                 <q-toggle
                   dense
                   style="font-weight: 500"
