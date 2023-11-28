@@ -1,15 +1,12 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header
-      elevated
-      class="header"
-    >
+    <q-header class="header">
       <q-toolbar>
         <img
           src="icons/favicon-32x32.png"
           alt="logo"
         />
-        <q-toolbar-title> Sophosia </q-toolbar-title>
+        <q-toolbar-title> {{ $t("sophosia") }} </q-toolbar-title>
 
         <ToolBarBtns v-model="showDrawer" />
       </q-toolbar>

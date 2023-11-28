@@ -1,12 +1,96 @@
 <template>
-  <q-drawer
+  <q-dialog
     :model-value="modelValue"
-    @update:model-value="$emit('update:model-value')"
-    show-if-above
-    side="right"
+    @update:model-value="(val: boolean) => $emit('update:model-value', val)"
+    maximized
+    transition-show="slide-left"
+    transition-hide="slide-right"
   >
-    hello
-  </q-drawer>
+    <q-card>
+      <q-toolbar>
+        <img
+          src="icons/favicon-32x32.png"
+          alt="logo"
+        />
+        <q-toolbar-title> {{ $t("sophosia") }} </q-toolbar-title>
+        <q-space />
+        <q-btn
+          dense
+          flat
+          icon="mdi-close"
+          v-close-popup
+        />
+      </q-toolbar>
+      <q-card-section>
+        <q-list separator>
+          <q-item
+            clickable
+            v-close-popup
+          >
+            <q-item-section>{{ $t("documentation") }}</q-item-section>
+          </q-item>
+          <q-expansion-item label="Language">
+            <q-list>
+              <q-item
+                v-for="lang in languageOptions"
+                :key="lang.value"
+                clickable
+                @click="language = lang"
+              >
+                <q-item-section>{{ lang.label }}</q-item-section>
+              </q-item>
+            </q-list>
+          </q-expansion-item>
+          <q-item>
+            <q-item-section>
+              <div class="row justify-between">
+                {{ $q.dark.isActive ? "Enter light mode" : "Enter dark mode" }}
+                <q-toggle
+                  dense
+                  style="font-weight: 500"
+                  :model-value="$q.dark.isActive"
+                  @update:model-value="(isDark: boolean) => $q.dark.set(isDark)"
+                  unchecked-icon="mdi-white-balance-sunny"
+                  checked-icon="mdi-brightness-4"
+                />
+              </div>
+            </q-item-section>
+          </q-item>
+        </q-list>
+      </q-card-section>
+      <q-card-section align="center">
+        <q-btn
+          name="github"
+          icon="mdi-github"
+          dense
+          flat
+          href="https://github.com/sophosia/sophosia"
+          target="_blank"
+        />
+        <q-btn
+          name="twitter"
+          icon="mdi-twitter"
+          dense
+          flat
+          href="https://twitter.com/sophosia_app"
+          target="_blank"
+        />
+        <q-btn
+          name="discord"
+          :style="
+            $q.dark.isActive
+              ? '-webkit-filter: invert(100%); filter: invert(100%)'
+              : ''
+          "
+          icon="img:discord.svg"
+          dense
+          flat
+          href="https://discord.gg/m3QkadNJ"
+          target="_blank"
+        />
+      </q-card-section>
+    </q-card>
+  </q-dialog>
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
