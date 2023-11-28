@@ -158,8 +158,6 @@ function prepareLinks() {
     case "Linux":
       downloadLabel.value = t("get-sophosia-for", [`${os.value} (appimage)`]);
       downloadLink.value = `${prefix}/sophosia_${version.value}_amd64.AppImage`;
-      console.log("locale", locale.value);
-      console.log("downloadLabel", downloadLabel.value);
       break;
     case "Windows":
       downloadLabel.value = t("get-sophosia-for", [`${os.value} (msi)`]);
