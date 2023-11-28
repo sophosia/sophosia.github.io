@@ -1,13 +1,19 @@
 <template>
-  <div v-if="showTabs">
+  <div
+    v-if="wideScreen"
+    class="row"
+  >
     <q-btn
       name="docs"
       :label="$t('documentation')"
       flat
       dense
       no-caps
-    ></q-btn>
+    />
+
+    <!-- have to put height here otherwise it's invisible in a div tag  -->
     <q-separator
+      style="height: 1rem"
       class="q-my-md q-mx-sm"
       vertical
     />
@@ -44,6 +50,7 @@
     </q-btn>
 
     <q-separator
+      style="height: 1rem"
       class="q-my-md q-mx-sm"
       vertical
     />
@@ -113,8 +120,11 @@ const language = computed({
   },
 });
 
-const showTabs = ref(true);
+const wideScreen = ref(false);
 window.onload = () => {
-  showTabs.value = window.innerWidth > 768;
+  wideScreen.value = window.innerWidth > 768;
+};
+window.onresize = () => {
+  wideScreen.value = window.innerWidth > 768;
 };
 </script>

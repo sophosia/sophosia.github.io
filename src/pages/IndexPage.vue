@@ -5,8 +5,8 @@
         {{ "Sophosia: Your Research Helper" }}
       </h2>
       <div class="app-description">
-        THE reference manager with features including PDF reading/annotating,
-        Markdown/Excalidraw note-taking, project/note linking, and more...
+        THE reference manager with features including PDF reading / annotating,
+        Markdown / Excalidraw note-taking, project / note linking, and more...
       </div>
 
       <div class="link-container">

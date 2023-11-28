@@ -1,6 +1,26 @@
 @media (max-width: 768px) {
+  .slogan {
+    font-size: 2rem;
+  }
+
+  .app-description {
+    font-size: 1.3rem;
+  }
+
+  .button {
+    font-size: 1.3rem;
+  }
+
+  .link {
+    font-size: 1.3rem;
+  }
+
   .screenshot {
     width: 90%;
+  }
+
+  .link-container {
+    flex-direction: column;
   }
 
   .feature-container {
@@ -16,4 +36,12 @@
     "desc"
     "img";
   } 
+
+  .feature-title {
+    font-size: 1.8rem
+  }
+
+  .feature-description {
+    font-size: 1.3rem
+  }
 }
