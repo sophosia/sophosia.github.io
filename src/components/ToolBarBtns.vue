@@ -5,11 +5,14 @@
   >
     <q-btn
       name="docs"
-      :label="$t('documentation')"
+      :label="$t('docs')"
       flat
       dense
       no-caps
-    />
+      :disable="true"
+    >
+      <q-tooltip>{{ $t("coming-soon") }}</q-tooltip>
+    </q-btn>
 
     <!-- have to put height here otherwise it's invisible in a div tag  -->
     <q-separator
@@ -95,7 +98,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 const props = defineProps({
   modelValue: { type: Boolean, required: true },
@@ -121,10 +124,14 @@ const language = computed({
 });
 
 const wideScreen = ref(false);
-window.onload = () => {
+onMounted(() => {
   wideScreen.value = window.innerWidth > 768;
-};
-window.onresize = () => {
-  wideScreen.value = window.innerWidth > 768;
-};
+  window.onresize = () => {
+    wideScreen.value = window.innerWidth > 768;
+  };
+});
+
+onBeforeUnmount(() => {
+  window.onresize = null;
+});
 </script>

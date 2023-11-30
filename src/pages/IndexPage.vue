@@ -31,14 +31,14 @@
 
       <img
         class="screenshot"
-        src="~assets/screenshot.png"
+        :src="`screenshot-${$q.dark.isActive ? 'dark' : 'light'}.png`"
         alt="screenshot.png"
       />
 
       <div class="feature-container">
         <img
           class="feature-img"
-          src="~assets/library-page.png"
+          :src="`library-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
           alt="library-page.png"
         />
         <div class="feature-desc column items-center">
@@ -59,7 +59,7 @@
         </div>
         <img
           class="feature-img"
-          src="~assets/reader-page.png"
+          :src="`reader-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
           alt="reader-page.png"
         />
       </div>
@@ -67,7 +67,7 @@
       <div class="feature-container">
         <img
           class="feature-img"
-          src="~assets/note-page.png"
+          :src="`note-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
           alt="note-page.png"
         />
         <div class="feature-desc column items-center">
@@ -85,8 +85,8 @@
         </div>
         <img
           class="feature-img"
-          src="~assets/note-page.png"
-          alt="note-page.png"
+          :src="`excalidraw-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
+          alt="excalidraw-page.png"
         />
       </div>
     </div>
@@ -94,7 +94,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch, watchEffect } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
 const { locale, t } = useI18n({ useScope: "global" });
 
