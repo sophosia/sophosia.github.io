@@ -1,5 +1,5 @@
 <template>
-  <h4 class="bold">Features</h4>
+  <div class="section-title">{{ $t("features") }}</div>
   <div class="feature-container">
     <img
       class="feature-img"
@@ -7,23 +7,18 @@
       alt="library-page.png"
     />
     <div class="feature-desc column">
-      <div class="feature-title">Reference Management</div>
-      <div class="feature-description">
-        Manage your references and corresponding notes in one place. Seting
-        favorites, modifying meta infomation of a reference, managing tags,
-        searching for references... All esential functionalities are here.
+      <div class="title">{{ $t("reference-management-title") }}</div>
+      <div class="text">
+        {{ $t("reference-management-text") }}
       </div>
     </div>
   </div>
 
   <div class="feature-container-reversed">
     <div class="feature-desc column">
-      <div class="feature-title">Built-in PDF Reader</div>
-      <div class="feature-description">
-        PDF reader comes with an internal link peeker, no need to flip back and
-        forward to read figures, tables and formulas now. Of course, PDF reader
-        supports annotations, and LaTeX is supported in the annotaiton. Perfect
-        for STEM researchers.
+      <div class="title">{{ $t("pdf-reader-title") }}</div>
+      <div class="text">
+        {{ $t("pdf-reader-text") }}
       </div>
     </div>
     <img
@@ -40,20 +35,18 @@
       alt="note-page.png"
     />
     <div class="feature-desc column">
-      <div class="feature-title">WYSIWYG Markdown Editor</div>
-      <div class="feature-description">
-        Live Markdown is the most elegant way to take notes. Together with the
-        power of internal link, you could build your own knowledge network.
+      <div class="title">{{ $t("markdown-editor-title") }}</div>
+      <div class="text">
+        {{ $t("markdown-editor-text") }}
       </div>
     </div>
   </div>
 
   <div class="feature-container-reversed">
     <div class="feature-desc column">
-      <div class="feature-title">Excalidraw Integrated</div>
-      <div class="feature-description">
-        Free your mind using the canvas without border. Perfect for people who
-        like to write and / or draw things with pen.
+      <div class="title">{{ $t("excalidraw-title") }}</div>
+      <div class="text">
+        {{ $t("excalidraw-text") }}
       </div>
     </div>
     <img

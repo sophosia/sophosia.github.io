@@ -66,7 +66,9 @@
           flat
           href="https://github.com/sophosia/sophosia"
           target="_blank"
-        />
+        >
+          <q-tooltip>GitHub</q-tooltip>
+        </q-btn>
         <q-btn
           name="twitter"
           icon="mdi-twitter"
@@ -74,7 +76,9 @@
           flat
           href="https://twitter.com/sophosia_app"
           target="_blank"
-        />
+        >
+          <q-tooltip>Twitter</q-tooltip>
+        </q-btn>
         <q-btn
           name="discord"
           :style="
@@ -87,7 +91,19 @@
           flat
           href="https://discord.gg/m3QkadNJ"
           target="_blank"
-        />
+        >
+          <q-tooltip>Discord</q-tooltip>
+        </q-btn>
+        <q-btn
+          name="qq"
+          icon="mdi-qqchat"
+          dense
+          flat
+          href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ZquNNKQ3HhS-X3WOnrubOWrXOvz2HGlk&authKey=YWK8YwMt%2F7Za6Ljyu8WfCibfXTTaSQjI%2BzPApoTFf0O85buKz5mH9N8tsO4gdKkX&noverify=0&group_code=808198109"
+          target="_blank"
+        >
+          <q-tooltip>QQ</q-tooltip>
+        </q-btn>
       </q-card-section>
     </q-card>
   </q-dialog>

@@ -6,7 +6,7 @@
           src="icons/favicon-32x32.png"
           alt="logo"
         />
-        <q-toolbar-title> {{ $t("sophosia") }} </q-toolbar-title>
+        <q-toolbar-title> Sophosia </q-toolbar-title>
 
         <ToolBarBtns v-model="showDrawer" />
       </q-toolbar>

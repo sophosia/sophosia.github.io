@@ -1,12 +1,8 @@
 {
-  "documentation": "文档",
-  "sophosia": "研究小助手",
-  "language": "语言",
-  "light-dark-mode": "明/暗模式",
-  "slogan": "你的研究小助手",
-  "more-platform": "其他平台",
-  "get-sophosia-for": "下载小助手{0}版",
-  "sophosia-is-coming": "敬请期待{0}版小助手",
+  "how-to-sync-a": "与其他文献管理器不同，Sophosia 的所有数据都存储在用户选择的储存文件夹中。用户只需要将储存文件夹同步到其他设备上即可。这对于类似于 Syncthing 这样的免费同步技术特别友好。",
+  "support": "支持",
+  "contribute": "贡献/分享/赞助该项目。",
   "docs": "文档",
-  "coming-soon": "敬请期待！"
+  "coming-soon": "敬请期待！",
+  "translate": "翻译"
 }
