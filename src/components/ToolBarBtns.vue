@@ -33,6 +33,7 @@
       dense
       icon="mdi-translate"
     >
+      <q-tooltip>{{ $t("translate") }}</q-tooltip>
       <q-popup-proxy>
         <q-list dense>
           <q-item
@@ -141,6 +142,7 @@ const language = computed({
 
 const wideScreen = ref(false);
 onMounted(() => {
+  locale.value = languageOptions[1].value;
   wideScreen.value = window.innerWidth > 768;
   window.onresize = () => {
     wideScreen.value = window.innerWidth > 768;
