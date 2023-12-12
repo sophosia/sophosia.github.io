@@ -1,4 +1,9 @@
 @media (max-width: 768px) {
+  .page-container {
+    width: 80%;
+    margin-left: 10%;
+  }
+
   .slogan {
     font-size: 2rem;
   }
@@ -34,6 +39,10 @@
     "desc"
     "img";
   } 
+
+  .section-title {
+    font-size: 1.6rem;
+  }
 
   .title {
     font-size: 1.4rem

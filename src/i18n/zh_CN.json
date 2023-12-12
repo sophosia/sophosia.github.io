@@ -33,5 +33,5 @@
   "plugin-system-q": "有插件系统吗？",
   "plugin-system-a": "有的。插件系统的原型已经在测试版<a target='_blank' href='https://github.com/ResearchHelper/research-helper'>研究小助手</a>中进行了测试。但是在用户实际使用它之前，我们仍需要改进插件系统结构和API。",
   "support": "支持",
-  "contribute": "贡献/分享/赞助该项目。"
+  "contribute": "贡献代码到/分享/赞助该项目。"
 }
