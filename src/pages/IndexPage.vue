@@ -1,175 +1,34 @@
 <template>
   <q-page class="page-container">
-    <div class="column items-center">
-      <h2 class="slogan">
-        {{ $t("slogan") }}
-      </h2>
-      <div class="app-description">
-        THE reference manager with features including PDF reading / annotating,
-        Markdown / Excalidraw note-taking, project / note linking, and more...
-      </div>
+    <SloganSection />
 
-      <div class="link-container">
-        <q-btn
-          no-caps
-          class="button"
-          :label="downloadLabel"
-          :href="downloadLink"
-          icon="mdi-download"
-          target="_blank"
-          :disable="!['Windows', 'Linux', 'Mac'].includes(os)"
-          color="primary"
-        />
-        <a
-          class="link"
-          href="https://github.com/sophosia/sophosia/releases/latest"
-          target="_blank"
-        >
-          {{ $t("more-platform") }}
-        </a>
-      </div>
+    <DownloadButton />
 
-      <img
-        class="screenshot"
-        :src="`screenshot-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-        alt="screenshot.png"
-      />
+    <img
+      class="screenshot"
+      :src="`screenshot-${$q.dark.isActive ? 'dark' : 'light'}.png`"
+      alt="screenshot.png"
+    />
 
-      <div class="feature-container">
-        <img
-          class="feature-img"
-          :src="`library-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-          alt="library-page.png"
-        />
-        <div class="feature-desc column items-center">
-          <div class="feature-title">Reference Management</div>
-          <div class="feature-description">
-            Manage your references and corresponding notes in one place
-          </div>
-        </div>
-      </div>
+    <hr style="width: 100%" />
+    <FeatureContainer />
 
-      <div class="feature-container-reversed">
-        <div class="feature-desc column items-center">
-          <div class="feature-title">Built-in PDF Reader</div>
-          <div class="feature-description">
-            Read and annotate PDF. Moreover, LaTeX is supported in the
-            annotaiton
-          </div>
-        </div>
-        <img
-          class="feature-img"
-          :src="`reader-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-          alt="reader-page.png"
-        />
-      </div>
+    <hr style="width: 100%" />
+    <FrequentQuestions />
 
-      <div class="feature-container">
-        <img
-          class="feature-img"
-          :src="`note-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-          alt="note-page.png"
-        />
-        <div class="feature-desc column items-center">
-          <div class="feature-title">WYSIWYG Markdown Editor</div>
-          <div class="feature-description">An elegant way to write note</div>
-        </div>
-      </div>
-
-      <div class="feature-container-reversed">
-        <div class="feature-desc column items-center">
-          <div class="feature-title">Excalidraw Integrated</div>
-          <div class="feature-description">
-            Free your mind using the canvas without border
-          </div>
-        </div>
-        <img
-          class="feature-img"
-          :src="`excalidraw-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-          alt="excalidraw-page.png"
-        />
-      </div>
-    </div>
+    <hr style="width: 100%" />
+    <SupportMethods />
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from "vue";
-import { useI18n } from "vue-i18n";
-const { locale, t } = useI18n({ useScope: "global" });
-
-const os = ref("");
-const downloadLabel = ref("");
-const downloadLink = ref("");
-const version = ref("");
-
-watch(locale, () => {
-  prepareLinks();
-});
-
-onMounted(async () => {
-  await getVersion();
-  getOS();
-  prepareLinks();
-});
-
-async function getVersion() {
-  const response = await fetch(
-    "https://api.github.com/repos/sophosia/sophosia/releases/latest",
-    {
-      method: "GET",
-      headers: {
-        Accept: "application/vnd.github+json",
-      },
-    }
-  );
-  const data = await response.json();
-  version.value = data.tag_name.slice(1) as string; // use slice to get rid of "v"
-}
-
-function getOS() {
-  var userAgent = window.navigator.userAgent,
-    platform =
-      window.navigator.userAgentData?.platform || window.navigator.platform,
-    macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
-    windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
-    iosPlatforms = ["iPhone", "iPad", "iPod"];
-
-  if (macosPlatforms.indexOf(platform) !== -1) {
-    os.value = "Mac";
-  } else if (iosPlatforms.indexOf(platform) !== -1) {
-    os.value = "iOS";
-  } else if (windowsPlatforms.indexOf(platform) !== -1) {
-    os.value = "Windows";
-  } else if (/Android/.test(userAgent)) {
-    os.value = "Android";
-  } else if (/Linux/.test(platform)) {
-    os.value = "Linux";
-  }
-}
-
-function prepareLinks() {
-  const prefix = `https://github.com/sophosia/sophosia/releases/download/v${version.value}`;
-  switch (os.value) {
-    case "Mac":
-      downloadLabel.value = t("get-sophosia-for", [`${os.value} (dmg)`]);
-      downloadLink.value = `${prefix}/sophosia_${version.value}_x64.dmg`;
-      break;
-    case "Linux":
-      downloadLabel.value = t("get-sophosia-for", [`${os.value} (appimage)`]);
-      downloadLink.value = `${prefix}/sophosia_${version.value}_amd64.AppImage`;
-      break;
-    case "Windows":
-      downloadLabel.value = t("get-sophosia-for", [`${os.value} (msi)`]);
-      downloadLink.value = `${prefix}/sophosia_${version.value}_x64_en-US.msi`;
-      break;
-    default:
-      downloadLabel.value = t("sophosia-is-coming", [os.value]);
-      break;
-  }
-}
+import SloganSection from "src/components/SloganSection.vue";
+import DownloadButton from "src/components/DownloadButton.vue";
+import FeatureContainer from "src/components/FeatureContainer.vue";
+import FrequentQuestions from "src/components/FrequentQuestions.vue";
+import SupportMethods from "src/components/SupportMethods.vue";
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 @import "src/css/responsive/index.scss";
 </style>

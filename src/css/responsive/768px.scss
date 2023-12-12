@@ -8,7 +8,7 @@
   }
 
   .button {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .link {
@@ -16,7 +16,7 @@
   }
 
   .screenshot {
-    width: 90%;
+    width: 100%;
   }
 
   .link-container {
@@ -24,14 +24,12 @@
   }
 
   .feature-container {
-    width: 100%;
     grid-template-areas:
     "desc"
     "img";
   } 
 
   .feature-container-reversed {
-    width: 100%;
     grid-template-areas:
     "desc"
     "img";
