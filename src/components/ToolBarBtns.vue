@@ -142,7 +142,6 @@ const language = computed({
 
 const wideScreen = ref(false);
 onMounted(() => {
-  locale.value = languageOptions[1].value;
   wideScreen.value = window.innerWidth > 768;
   window.onresize = () => {
     wideScreen.value = window.innerWidth > 768;
