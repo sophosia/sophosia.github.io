@@ -45,8 +45,8 @@ async function getVersion() {
     {
       method: "GET",
       headers: {
-        Accept: "application/vnd.github+json",
-      },
+        Accept: "application/vnd.github+json"
+      }
     }
   );
   const data = await response.json();
@@ -57,9 +57,10 @@ function getOS() {
   var userAgent = window.navigator.userAgent,
     platform =
       window.navigator.userAgentData?.platform || window.navigator.platform,
-    macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+    macosPlatforms = ["Macintosh", "macOS", "MacIntel", "MacPPC", "Mac68K"],
     windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
     iosPlatforms = ["iPhone", "iPad", "iPod"];
+  console.log(platform);
 
   if (macosPlatforms.indexOf(platform) !== -1) {
     os.value = "Mac";
