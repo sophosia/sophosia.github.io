@@ -19,6 +19,7 @@
     </a>
   </div>
 </template>
+
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 import { useI18n } from "vue-i18n";
@@ -60,7 +61,6 @@ function getOS() {
     macosPlatforms = ["Macintosh", "macOS", "MacIntel", "MacPPC", "Mac68K"],
     windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
     iosPlatforms = ["iPhone", "iPad", "iPod"];
-  console.log(platform);
 
   if (macosPlatforms.indexOf(platform) !== -1) {
     os.value = "Mac";
@@ -96,3 +96,20 @@ function prepareLinks() {
   }
 }
 </script>
+<style scoped>
+.link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border-radius: 20px; /* Adjust the value to make angles less harsh */
+}
+
+.link {
+  margin-top: 10px; /* Adjust space between the button and the link */
+  font-size: 1em; /* Smaller font size for the link */
+}
+</style>
