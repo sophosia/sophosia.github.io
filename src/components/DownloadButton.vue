@@ -96,20 +96,3 @@ function prepareLinks() {
   }
 }
 </script>
-<style scoped>
-.link-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.button {
-  border-radius: 20px; /* Adjust the value to make angles less harsh */
-}
-
-.link {
-  margin-top: 10px; /* Adjust space between the button and the link */
-  font-size: 1em; /* Smaller font size for the link */
-}
-</style>

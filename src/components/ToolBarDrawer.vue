@@ -114,13 +114,13 @@ import { useI18n } from "vue-i18n";
 const { locale } = useI18n({ useScope: "global" });
 
 const props = defineProps({
-  modelValue: { type: Boolean, required: true },
+  modelValue: { type: Boolean, required: true }
 });
 const emit = defineEmits(["update:model-value"]);
 
 const languageOptions = [
   { value: "en_US", label: "English" },
-  { value: "zh_CN", label: "中文" },
+  { value: "zh_CN", label: "中文" }
 ];
 const language = computed({
   get() {
@@ -131,6 +131,6 @@ const language = computed({
   },
   set(option: { value: string; label: string }) {
     locale.value = option.value;
-  },
+  }
 });
 </script>

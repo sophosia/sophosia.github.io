@@ -3,7 +3,7 @@
   "sophosia": "Sophosia",
   "language": "Language",
   "light-dark-mode": "Light / Dark Mode",
-  "slogan": "Your Research Helper",
+  "slogan": "Sophosia - Your Research Helper",
   "more-platform": "More Platforms",
   "get-sophosia-for": "Sophosia for {0}",
   "sophosia-is-coming": "Sophosia for {0} is Coming",
@@ -16,11 +16,11 @@
   "excalidraw-text": "Free your mind using the canvas without borders. Perfect for people who like to write and / or draw things with a pen.",
   "features": "Features",
   "reference-management-title": "Reference Management",
-  "reference-management-text": "Manage your references and corresponding notes in one place. Setting favorites, modifying metadata of a reference, managing tags, searching for references... All essential functionalities are here.",
+  "reference-management-text": "Efficiently manage and export your references from one central location. With a single click, choose from over 6 bibliography styles and various formats, whether you're exporting an entire folder or just a single paper's references, ensuring quick and organized access to your bibliographic data.",
   "pdf-reader-title": "Read and Annotate PDFs",
-  "pdf-reader-text": "Our PDF reader comes with an internal link peeker, eliminating the need to flip back and forth to read figures, tables, and formulas. Of course, the PDF reader supports annotations, and LaTeX is supported in the annotations. Perfect for STEM researchers.",
+  "pdf-reader-text": "Our PDF reader, ideal for STEM researchers, offers an internal link peeker for seamless access to figures, tables, and formulas without the hassle of flipping pages. It also enables annotations and translation, with LaTeX compatibility within annotations, enhancing your reading and research experience.",
   "markdown-editor-title": "Take Notes with Markdown",
-  "markdown-editor-text": "WYSIWYG Markdown is the most elegant way to take notes. Together with the power of internal linking, you could build your own knowledge network for each research project you work on.",
+  "markdown-editor-text": "Take notes with Markdown, the most elegant and flexible way to take notes. Together with the power of internal linking, you could build your own knowledge network for each research project you work on.",
   "frequent-questions": "Frequent Questions",
   "differ-from-zotero-q": "How does it differ from other reference managers, say Zotero?",
   "differ-from-zotero-a": "While Zotero specializes in reference management, Sophosia provides an integrated experience of note-taking and reference managing.",
@@ -35,5 +35,6 @@
   "plugin-system-q": "Is there a plugin system?",
   "plugin-system-a": "Yes. The prototype of the plugin system has already been tested in the beta version, previously named <a target='_blank' href='https://github.com/ResearchHelper/research-helper'>Research Helper</a>. However, we need to improve the plugin system structure and Sophosia APIs before users can actually use it.",
   "research-helper": "Research Helper",
-  "translate": "Translate"
+  "translate": "Translate",
+  "promise": "Take charge of your knowledge!"
 }

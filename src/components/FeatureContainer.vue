@@ -1,17 +1,20 @@
 <template>
-  <div class="section-title">{{ $t("features") }}</div>
+  <!-- <div class="section-title">{{ $t("features") }}</div> -->
   <div class="feature-container">
-    <img
-      class="feature-img"
-      :src="`library-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-      alt="library-page.png"
-    />
     <div class="feature-desc column">
       <div class="title">{{ $t("reference-management-title") }}</div>
       <div class="text">
         {{ $t("reference-management-text") }}
       </div>
     </div>
+    <video
+      class="feature-img"
+      :src="`reference-page.mp4`"
+      alt="reference-page.mp4"
+      autoplay
+      muted
+      loop
+    />
   </div>
 
   <div class="feature-container-reversed">
@@ -21,25 +24,32 @@
         {{ $t("pdf-reader-text") }}
       </div>
     </div>
-    <img
+    <video
       class="feature-img"
-      :src="`reader-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-      alt="reader-page.png"
+      :src="`reader-page.mp4`"
+      alt="reader-page.mp4"
+      autoplay
+      muted
+      loop
     />
   </div>
 
   <div class="feature-container">
-    <img
-      class="feature-img"
-      :src="`note-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-      alt="note-page.png"
-    />
     <div class="feature-desc column">
       <div class="title">{{ $t("markdown-editor-title") }}</div>
       <div class="text">
         {{ $t("markdown-editor-text") }}
       </div>
     </div>
+
+    <video
+      class="feature-img"
+      :src="`note-page.mp4`"
+      alt="note-page.mp4"
+      autoplay
+      muted
+      loop
+    />
   </div>
 
   <div class="feature-container-reversed">
@@ -51,7 +61,7 @@
     </div>
     <img
       class="feature-img"
-      :src="`excalidraw-page-${$q.dark.isActive ? 'dark' : 'light'}.png`"
+      :src="`excalidraw-page-dark.png`"
       alt="excalidraw-page.png"
     />
   </div>

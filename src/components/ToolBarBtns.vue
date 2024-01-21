@@ -20,14 +20,14 @@
       class="q-my-md q-mx-sm"
       vertical
     />
-    <q-toggle
+    <!-- <q-toggle
       dense
       style="font-weight: 500"
       :model-value="$q.dark.isActive"
       @update:model-value="(isDark: boolean) => $q.dark.set(isDark)"
       unchecked-icon="mdi-white-balance-sunny"
       checked-icon="mdi-brightness-4"
-    />
+    /> -->
     <q-btn
       flat
       dense
@@ -118,7 +118,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 const props = defineProps({
-  modelValue: { type: Boolean, required: true },
+  modelValue: { type: Boolean, required: true }
 });
 const emit = defineEmits(["update:model-value"]);
 
@@ -126,7 +126,7 @@ const { locale } = useI18n({ useScope: "global" });
 
 const languageOptions = [
   { value: "en_US", label: "English" },
-  { value: "zh_CN", label: "中文" },
+  { value: "zh_CN", label: "中文" }
 ];
 const language = computed({
   get() {
@@ -137,7 +137,7 @@ const language = computed({
   },
   set(option: { value: string; label: string }) {
     locale.value = option.value;
-  },
+  }
 });
 
 const wideScreen = ref(false);

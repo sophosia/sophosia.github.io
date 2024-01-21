@@ -12,7 +12,7 @@
   "app-description": "支持双链的文献笔记管理系统",
   "features": "功能",
   "reference-management-title": "管理文献及笔记",
-  "reference-management-text": "创建笔记、删除笔记、收藏文献、修改文献信息、搜索文献、管理标签……所有基本功能都在这里。",
+  "reference-management-text": "从一个中心位置高效管理和导出您的参考文献。仅需一键，就可以从超过6种参考书目样式和各种格式中选择，无论您是导出整个文件夹还是仅导出单篇论文的参考文献，都能确保快速且有组织地访问您的书目数据。",
   "pdf-reader-title": "阅读和注释 PDF",
   "pdf-reader-text": "PDF阅读器带有内部链接查看器，无需来回翻页即可阅读数字、表格和公式。当然，PDF阅读器支持注释，且注释支持LaTeX输入。非常适合理工研究人员。",
   "markdown-editor-title": "用 Markdown 做笔记",
@@ -33,5 +33,6 @@
   "plugin-system-q": "有插件系统吗？",
   "plugin-system-a": "有的。插件系统的原型已经在测试版<a target='_blank' href='https://github.com/ResearchHelper/research-helper'>研究小助手</a>中进行了测试。但是在用户实际使用它之前，我们仍需要改进插件系统结构和API。",
   "support": "支持",
-  "contribute": "贡献代码到/分享/赞助该项目。"
+  "contribute": "贡献代码到/分享/赞助该项目。",
+  "promise": "掌握你的知识！"
 }

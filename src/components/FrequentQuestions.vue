@@ -1,6 +1,6 @@
 <template>
   <div class="section-title">{{ $t("frequent-questions") }}</div>
-  <div class="title questions">
+  <div class="title-questions">
     <q-expansion-item
       v-for="(item, index) in faqItems"
       :key="index"

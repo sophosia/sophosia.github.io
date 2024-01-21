@@ -1,24 +1,34 @@
 <template>
-  <q-page class="page-container">
-    <SloganSection />
+  <div class="main">
+    <q-page class="page-container">
+      <SloganSection />
 
-    <DownloadButton />
+      <DownloadButton />
 
-    <img
-      class="screenshot"
-      :src="`screenshot-${$q.dark.isActive ? 'dark' : 'light'}.png`"
-      alt="screenshot.png"
-    />
+      <img
+        class="sopho-app"
+        :src="`sopho-app.png`"
+        alt="sopho-app.png"
+      />
 
-    <hr style="width: 100%" />
-    <FeatureContainer />
+      <hr style="width: 100%" />
+      <FeatureContainer />
 
-    <hr style="width: 100%" />
-    <FrequentQuestions />
+      <hr style="width: 100%" />
+      <FrequentQuestions />
 
-    <hr style="width: 100%" />
-    <SupportMethods />
-  </q-page>
+      <hr style="width: 100%" />
+      <SupportMethods />
+      <DownloadButton
+        style="
+          font-size: 0.5em; /* Smaller font size for the link */
+          border-radius: 20px;
+          background-color: $primary;
+          color: var(--color-text);
+        "
+      />
+    </q-page>
+  </div>
 </template>
 
 <script setup lang="ts">
