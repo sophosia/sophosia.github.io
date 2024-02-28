@@ -47,16 +47,34 @@
   justify-content: center;
 }
 
+.download-btns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
 .button {
-  font-size: 1em;
+  font-size: 1.2rem;
   border-radius: 20px; 
   background-color: $primary;
   color: var(--color-text);
+  margin: 1rem;
+  min-width: 30%;
+  line-height: 1.2em;
+}
+
+.button-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .link {
   color: var(--color-text);
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -83,52 +101,49 @@
 }
 
 .feature-img {
-  width:45%;
-  max-width: 900px;
+  max-width: 60%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 4px; 
   flex: 1 0 50%;
   height: auto;
-  margin: 10px;
 }
 
 .feature-desc.column {
   flex: 1 0 50%;
-  max-width: 400px;
+  max-width: 30%;
   padding: 15px;
-  margin: 10px;
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
 }
 
 .text {
-  font-size: 0.7rem;
+  font-size: 1rem;
   margin-bottom: 0.8rem;
 }
 
 .title-questions{
   color: #C0C0C0;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
 .answer-text {
   color: #C0C0C0;
-  font-size: 0.7rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
 .footer-title{
   color: #C0C0C0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   align-self: center;
 }
 
 .section-title{
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 500;
 }

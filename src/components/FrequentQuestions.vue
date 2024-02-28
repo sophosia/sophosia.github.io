@@ -6,35 +6,28 @@
       :key="index"
       :label="$t(item.question)"
       v-model:expanded="expandedStates[index]"
-      @update:expanded="(val) => handleExpansion(index, val)"
-      expand-separator
     >
-      <div class="support-text answer-text">{{ $t(item.answer) }}</div>
+      <div
+        class="support-text answer-text"
+        v-html="$t(item.answer)"
+      ></div>
     </q-expansion-item>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { QExpansionItem } from "quasar";
+import { ref } from "vue";
 
 const faqItems = [
   { question: "differ-from-zotero-q", answer: "differ-from-zotero-a" },
   { question: "how-to-sync-q", answer: "how-to-sync-a" },
-  {
-    question: "cannot-verify-developer-q",
-    answer: "cannot-verify-developer-a"
-  },
   { question: "export-pdf-q", answer: "export-pdf-a" },
   { question: "edit-in-other-app-q", answer: "edit-in-other-app-a" },
-  { question: "plugin-system-q", answer: "plugin-system-a" }
+  { question: "plugin-system-q", answer: "plugin-system-a" },
 ];
 
 const expandedStates = ref(faqItems.map((item, index) => index === 0));
-
-function handleExpansion(index, val) {
-  expandedStates.value[index] = val;
-}
 </script>
 <style scoped>
 .answer-text {

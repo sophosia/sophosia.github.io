@@ -11,7 +11,7 @@
   "coming-soon": "Coming Soon!",
   "support": "Support",
   "contribute": "Contribute to / Share / Sponsor This Project.",
-  "app-description": "Say Hello to Your New Research Friend: annotatePDFs, Take notes with Markdown/Excalidraw, Organize References, Link thoughts, notes, and Papers Like a Pro, and More... It's Not Just Smart, It's Genius!",
+  "app-description": "Say Hello to Your New Research Assistant: annotatePDFs, Take notes with Markdown/Excalidraw, Organize References, Link thoughts, notes, and Papers Like a Pro, and More... It's Not Just Smart, It's Genius!",
   "excalidraw-title": "Draft with Excalidraw",
   "excalidraw-text": "Free your mind using the canvas without borders. Perfect for people who like to write and / or draw things with a pen.",
   "features": "Features",
@@ -26,8 +26,6 @@
   "differ-from-zotero-a": "While Zotero specializes in reference management, Sophosia provides an integrated experience of note-taking and reference managing.",
   "how-to-sync-q": "How do I sync data among devices?",
   "how-to-sync-a": "Unlike other reference managers, all of Sophosia's data is stored in a user-selected storage folder. This means that to sync data, users only need to sync the storage folder to other devices. This is particularly friendly to free syncing technology like Syncthing, Onedrive, iCloud Drive.",
-  "cannot-verify-developer-q": "Cannot verify developer while installing?!",
-  "cannot-verify-developer-a": "Rest assured, it's not a virus! At this initial phase, our application hasn't been equipped with code signing digital certifications for Windows and macOS. We plan to acquire these licenses in the near future.",
   "export-pdf-q": "Can I export PDFs with annotations?",
   "export-pdf-a": "To my knowledge, LaTeX-supported annotation is only available in Sophosia; it is not a standard feature of many PDF viewers. Currently, we don't support exporting PDFs with annotations.",
   "edit-in-other-app-q": "Can I edit PDF, Markdown, and Excalidraw files in other applications?",
@@ -36,5 +34,7 @@
   "plugin-system-a": "Yes. The prototype of the plugin system has already been tested in the beta version, previously named <a target='_blank' href='https://github.com/ResearchHelper/research-helper'>Research Helper</a>. However, we need to improve the plugin system structure and Sophosia APIs before users can actually use it.",
   "research-helper": "Research Helper",
   "translate": "Translate",
-  "promise": "Take charge of your knowledge!"
+  "promise": "Take charge of your knowledge!",
+  "installer": "Installer",
+  "portable": "Portable"
 }

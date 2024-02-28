@@ -9,7 +9,7 @@
   "docs": "文档",
   "coming-soon": "敬请期待！",
   "translate": "翻译",
-  "app-description": "支持双链的文献笔记管理系统",
+  "app-description": "阅读/注释 PDF、使用 Markdown/Excalidraw 做笔记、再用双链构建你的知识网络…… Sophosia将会是你的研究小助手！",
   "features": "功能",
   "reference-management-title": "管理文献及笔记",
   "reference-management-text": "从一个中心位置高效管理和导出您的参考文献。仅需一键，就可以从超过6种参考书目样式和各种格式中选择，无论您是导出整个文件夹还是仅导出单篇论文的参考文献，都能确保快速且有组织地访问您的书目数据。",
@@ -24,8 +24,6 @@
   "differ-from-zotero-a": "Zotero 是非常好的文献管理器，而Sophosia 则为您提供集成了笔记系统和文献管理的综合体验。",
   "how-to-sync-q": "如何在设备之间同步数据？",
   "how-to-sync-a": "与其他文献管理器不同，Sophosia 的所有数据都存储在用户选择的储存文件夹中。用户只需要将储存文件夹同步到其他设备上即可。这对于类似于 Syncthing 这样的免费同步技术特别友好。",
-  "cannot-verify-developer-q": "安装时无法验证开发者？！",
-  "cannot-verify-developer-a": "这不是病毒！只是在目前阶段我没有买 Windows 和 macOS 上的数字许可证。一旦这个项目获得足够的关注，我就会购买许可证。",
   "export-pdf-q": "我可以导出带注释的 PDF 吗？",
   "export-pdf-a": "据我所知，支持 LaTeX 的注释仅在 Sophosia 中可用，它不是 PDF 阅读器的标准功能。目前我们不支持导出带注释的 PDF。",
   "edit-in-other-app-q": "我可以在其他应用程序中编辑 PDF、Markdown 和 Excalidraw 文件吗？",
@@ -34,5 +32,7 @@
   "plugin-system-a": "有的。插件系统的原型已经在测试版<a target='_blank' href='https://github.com/ResearchHelper/research-helper'>研究小助手</a>中进行了测试。但是在用户实际使用它之前，我们仍需要改进插件系统结构和API。",
   "support": "支持",
   "contribute": "贡献代码到/分享/赞助该项目。",
-  "promise": "掌握你的知识！"
+  "promise": "掌握你的知识！",
+  "installer": "安装版",
+  "portable": "便携版"
 }

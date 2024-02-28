@@ -1,15 +1,27 @@
 <template>
   <div class="link-container">
-    <q-btn
-      no-caps
-      class="button"
-      :label="downloadLabel"
-      :href="downloadLink"
-      icon="mdi-download"
-      target="_blank"
-      :disable="!['Windows', 'Linux', 'Mac'].includes(os)"
-      color="primary"
-    />
+    <div class="download-btns-container">
+      <q-btn
+        v-for="option in downloadOptions"
+        :key="option.label"
+        no-caps
+        class="button"
+        :href="option.link"
+        target="_blank"
+        :disable="!['Windows', 'Linux', 'Mac'].includes(os)"
+        color="primary"
+      >
+        <div class="button-content">
+          <q-icon name="mdi-download"></q-icon>
+          <div class="column items-center">
+            <div>{{ option.label }}</div>
+            <div style="font-size: 0.8em">
+              {{ option.type }}
+            </div>
+          </div>
+        </div>
+      </q-btn>
+    </div>
     <a
       class="link"
       href="https://github.com/sophosia/sophosia/releases/latest"
@@ -26,8 +38,9 @@ import { useI18n } from "vue-i18n";
 const { locale, t } = useI18n({ useScope: "global" });
 
 const os = ref("");
-const downloadLabel = ref("");
-const downloadLink = ref("");
+const downloadOptions = ref(
+  [] as { label: string; link: string; type: string }[]
+);
 const version = ref("");
 
 watch(locale, () => {
@@ -46,8 +59,8 @@ async function getVersion() {
     {
       method: "GET",
       headers: {
-        Accept: "application/vnd.github+json"
-      }
+        Accept: "application/vnd.github+json",
+      },
     }
   );
   const data = await response.json();
@@ -76,22 +89,41 @@ function getOS() {
 }
 
 function prepareLinks() {
+  downloadOptions.value = [];
   const prefix = `https://github.com/sophosia/sophosia/releases/download/v${version.value}`;
   switch (os.value) {
     case "Mac":
-      downloadLabel.value = t("get-sophosia-for", [`${os.value} (dmg)`]);
-      downloadLink.value = `${prefix}/sophosia_${version.value}_x64.dmg`;
+      downloadOptions.value.push({
+        label: t("get-sophosia-for", [os.value]),
+        link: `${prefix}/sophosia_${version.value}_x64.dmg`,
+        type: `${t("installer")} (dmg)`,
+      });
       break;
     case "Linux":
-      downloadLabel.value = t("get-sophosia-for", [`${os.value} (appimage)`]);
-      downloadLink.value = `${prefix}/sophosia_${version.value}_amd64.AppImage`;
+      downloadOptions.value.push({
+        label: t("get-sophosia-for", [os.value]),
+        link: `${prefix}/sophosia_${version.value}_amd64.AppImage`,
+        type: `${t("portable")} (appimage)`,
+      });
       break;
     case "Windows":
-      downloadLabel.value = t("get-sophosia-for", [`${os.value} (msi)`]);
-      downloadLink.value = `${prefix}/sophosia_${version.value}_x64_en-US.msi`;
+      downloadOptions.value.push({
+        label: t("get-sophosia-for", [os.value]),
+        link: `${prefix}/sophosia_${version.value}_x64_en-US.msi`,
+        type: `${t("installer")} (msi)`,
+      });
+      downloadOptions.value.push({
+        label: t("get-sophosia-for", [os.value]),
+        link: `${prefix}/sophosia_${version.value}_portable.exe`,
+        type: `${t("portable")} (exe)`,
+      });
       break;
     default:
-      downloadLabel.value = t("sophosia-is-coming", [os.value]);
+      downloadOptions.value.push({
+        label: t("sophosia-is-coming", [os.value]),
+        link: "",
+        type: "",
+      });
       break;
   }
 }

@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="section-title">{{ $t("features") }}</div> -->
   <div class="feature-container">
     <div class="feature-desc column">
       <div class="title">{{ $t("reference-management-title") }}</div>
