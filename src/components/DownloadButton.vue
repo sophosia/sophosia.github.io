@@ -24,7 +24,7 @@
     </div>
     <a
       class="link"
-      href="https://github.com/sophosia/sophosia/releases/latest"
+      href="https://github.com/sophosia/sophosia-releases/releases/latest"
       target="_blank"
     >
       {{ $t("more-platform") }}
@@ -55,7 +55,7 @@ onMounted(async () => {
 
 async function getVersion() {
   const response = await fetch(
-    "https://api.github.com/repos/sophosia/sophosia/releases/latest",
+    "https://api.github.com/repos/sophosia/sophosia-releases/releases/latest",
     {
       method: "GET",
       headers: {
@@ -90,7 +90,7 @@ function getOS() {
 
 function prepareLinks() {
   downloadOptions.value = [];
-  const prefix = `https://github.com/sophosia/sophosia/releases/download/v${version.value}`;
+  const prefix = `https://github.com/sophosia/sophosia-releases/releases/download/v${version.value}`;
   switch (os.value) {
     case "Mac":
       downloadOptions.value.push({
