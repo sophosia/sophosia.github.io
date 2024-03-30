@@ -34,5 +34,7 @@
   "contribute": "贡献代码到/分享/赞助该项目。",
   "promise": "掌握你的知识！",
   "installer": "安装版",
-  "portable": "便携版"
+  "portable": "便携版",
+  "auth-success": "验证成功，您可以关闭浏览器选项卡了",
+  "auth-fail": "验证失败，请重试"
 }

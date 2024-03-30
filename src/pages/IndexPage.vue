@@ -23,7 +23,7 @@
         style="
           font-size: 0.5em; /* Smaller font size for the link */
           border-radius: 20px;
-          background-color: $primary;
+          background-color: primary;
           color: var(--color-text);
         "
       />
@@ -32,10 +32,10 @@
 </template>
 
 <script setup lang="ts">
-import SloganSection from "src/components/SloganSection.vue";
 import DownloadButton from "src/components/DownloadButton.vue";
 import FeatureContainer from "src/components/FeatureContainer.vue";
 import FrequentQuestions from "src/components/FrequentQuestions.vue";
+import SloganSection from "src/components/SloganSection.vue";
 import SupportMethods from "src/components/SupportMethods.vue";
 </script>
 

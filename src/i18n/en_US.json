@@ -36,5 +36,7 @@
   "translate": "Translate",
   "promise": "Take charge of your knowledge!",
   "installer": "Installer",
-  "portable": "Portable"
+  "portable": "Portable",
+  "auth-success": "Authentication successful, you may close the browser tab",
+  "auth-fail": "Authentication failed, please try again"
 }
